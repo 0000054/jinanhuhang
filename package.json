@@ -1,0 +1,13 @@
+{
+  "name": "campus-shield-extension",
+  "version": "0.1.0",
+  "private": false,
+  "description": "A local-first campus anti-phishing browser extension prototype",
+  "scripts": {
+    "test": "node --test test/rules.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

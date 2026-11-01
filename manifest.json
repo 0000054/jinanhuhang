@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "暨南护航 · 校园反钓鱼",
+  "version": "0.1.0",
+  "description": "面向大学生的校园网站风险识别与安全提示插件。",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "src/background/service-worker.js" },
+  "action": {
+    "default_title": "暨南护航",
+    "default_popup": "src/popup/popup.html"
+  },
+  "options_page": "src/options/options.html",
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["src/core/schools.js", "src/core/rules.js", "src/content/scan.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
